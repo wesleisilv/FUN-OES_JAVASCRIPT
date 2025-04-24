@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <!--QUESTÃO 1-->
+    <script>
+        function calculardesconto(preçooriginal,percentualdesconto){
+            var valorfinal=preçooriginal-(preçooriginal*(percentualdesconto/100))
+            return valorfinal
+        }
+        console.log(calculardesconto(1300,30))
+    </script>
+    <!--QUESTÃO 2-->
+    <script>
+        function verificarmaioridade(VMI){
+            if (VMI >= 18){
+                return 'Maior de idade'
+            }
+            else{
+                return 'Menor de idade'
+            }
+        }
+        console.log(verificarmaioridade(10))
+    </script>
+    <!--QUESTÃO 3-->
+    <script>
+        function calcularsalarioliquido(salario){
+            var desconto = salario * 0.10
+            var salarioliquido = salario - desconto
+            return salarioliquido
+        }
+        console.log(calcularsalarioliquido(1300))
+    </script>
+    <!--QUESTÃO 4-->
+    <script>
+       function gerarsenha(tamanho) {
+    var LM = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var LMin = 'abcdefghijklmnopqrstuvwxyz';
+    var numeros = '0123456789';
+    var TC = LM + LMin + numeros;
+    var senha = '';
+    for (var i = 0; i < tamanho; i++) {
+        var sorteio = Math.floor(Math.random() * TC.length);
+        senha += TC[sorteio];
+    }
+    return senha;
+}
+
+console.log(gerarsenha(10));
+    </script>
+    <!--QUESTÃO 5-->
+    <script>
+        function convertertemperatura(valor, tipo){
+            if (tipo === 'c'){
+                return (valor * 9/5)+32
+            }
+            if (tipo === 'f'){
+                return (valor - 32)*5/9
+            }
+        }
+        console.log( convertertemperatura(30, 'c'))
+        console.log( convertertemperatura(80,'f'))
+    </script>
+    <!--QUESTÃO 6-->
+    <script>
+        function calcularmedia(numeros){
+            var soma = 0
+            for(var i=0;i<numeros.length;i++){
+                soma = soma+numeros[i]
+            }
+            var media = soma/numeros.length
+            return media
+        }
+        var lista = [9,8,10]
+        var resultado = calcularmedia(lista)
+        console.log(resultado)
+    </script>
+    <!--QUESTÃO 7-->
+    <script>
+        function filtrarpalavras(palavras, minimo){
+            var resultado = []
+            for(var i=0;i<palavras.length;i++){
+                if (palavras[i].length>=minimo){
+                    resultado.push(palavras[i])
+                }
+            }
+            return resultado
+        }
+        console.log(filtrarpalavras(['oi','dia','noite','sol'],3))
+    </script>
+    <!--QUESTÃO 8-->
+    <script>
+        function categorizarproduto(preço){
+            if (preço < 50){
+                return 'Econômico'
+            }
+            else if (preço <= 100){
+                return 'intermediario'
+            }
+            else{
+                return 'premium'
+            }
+        }
+        console.log(categorizarproduto(75))
+    </script>
+    <!--QUESTÃO 9-->
+    <script>
+        function encontarnumeroprimo(numero){
+            if (numero <=1){
+                return false
+            }
+            for (var i=2; i<numero;i++){
+                if (numero % i===0){
+                    return false
+                }
+            }
+            return true
+        }
+        console.log(encontarnumeroprimo(7))
+        console.log(encontarnumeroprimo(11))
+    </script>
+    <!--QUESTÃO 10-->
+    <script>
+        function contarvogais(texto){
+            var vogais = 'aeiouAEIOU'
+            var total = 0 
+            for(var i=0;i<texto.length;i++){
+                if (vogais.includes(texto[i])){
+                    total++
+                }
+            }
+            return total
+        }
+        console.log(contarvogais('pneumoultramicroscopicossilicovulcanoconiótico'))
+    </script>
+</body>
+</html>
